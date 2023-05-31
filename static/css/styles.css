@@ -1,0 +1,406 @@
+body {
+    margin: 0;
+    font-family: "Questrial";
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #FFF2F1;
+}
+
+/* NAVBAR STUFF*/
+#navbar {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    height: auto;
+    width: 100%;
+    background: linear-gradient(90deg, rgb(253, 158, 178) 55%, rgb(64, 70, 255) 100%);
+}
+
+.navbar_item {
+    float: right;
+    background-color: #FFF2F1;
+    margin-right: 43px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 100px;
+    height: 25px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+.navbar_item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+.navbar_item .navbar_link {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: #565254;
+    font-family: "Questrial";
+}
+
+#logo {
+    float: left;
+}
+
+#logo_link {
+    display: block;
+    margin: 12px;
+    font-family: "Lobster";
+    text-decoration: none;
+    color: #FFF2F1;
+    font-size: 20px;
+}
+
+/* END NAVBAR STUFF */
+
+/* FOOTER */
+#footer {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    margin-top: auto;
+    padding: 3px;
+    height: auto;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background: rgb(255, 202, 212);
+    background: linear-gradient(90deg, rgba(255, 202, 212, 1) 55%, rgba(153, 157, 255, 1) 100%);
+}
+
+.footer_item {
+    display: block;
+    float: left;
+    margin-left: 12px;
+    font-family: FontAwesome;
+    font-size: 24px;
+}
+
+/* END FOOTER */
+
+/* ICONS */
+
+.fa {
+    padding: 8px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 100%;
+
+}
+
+.fa-instagram {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+    color: white;
+
+}
+
+/* END ICONS */
+
+/* HERO IMAGE */
+.hero {
+    padding-top: 10%;
+    height: 80vh;
+    text-align: center;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/heroImage.jpg");
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero h1 {
+    text-align: center;
+    color: white;
+    font-family: "Staatliches";
+    font-weight: lighter;
+    font-size: 124px;
+    margin-top: 15vh;
+    margin-bottom: 0;
+}
+
+.hero h3 {
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    margin: 0;
+    font-family: Questrial;
+    font-weight: lighter;
+}
+
+.hero-button {
+    border: none;
+    font-family: "Questrial";
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 100px;
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    width: auto;
+    padding: 12px;
+    color: #565254;
+    background: #FFF2F1;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+/* END HERO IMAGE */
+
+/* CARDS */
+.card {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(246, 154, 188, 0.5); /* dropshadow with a pinkish hue */
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    background: url("https://media.istockphoto.com/id/157399336/photo/a-large-bouquet-of-multicolored-flowers-of-different-species.jpg?s=612x612&w=0&k=20&c=bsh1ReO97fAW_00XqBcHvAjzmGgtJI0QCPbQ6OILars=");
+    background-size: cover;
+
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(246, 154, 188, 0.5), 0 4px 8px rgba(0, 0, 0, .06);
+    z-index: 2;
+}
+
+.cards-container {
+    margin: 5vh 12vw 5rem;
+    font-size: 36px;
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    column-gap: normal;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+    max-width: 100%
+
+}
+
+.big-header {
+    text-align: center;
+    font-size: 72px;
+    color: #FFF2F1;
+    background: #999DFFFF;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    height: 30vh;
+    padding-top: 100px;
+    font-weight: bold;
+
+
+}
+
+.category {
+    text-align: left;
+    font-size: 36px;
+    margin: 0 12vw;
+}
+
+/* END CARDS */
+
+/* ABOUT PAGE STYLING
+.about-image {
+    background: url("../images/monicaBesitosOwner.jpg");
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    display: inline-block;
+    margin: 0;
+    left: 100px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .10), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+
+} */
+
+.big-footer {
+    text-align: center;
+    font-size: 72px;
+    color: #FFF2F1;
+    background: #999DFFFF;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 30vh;
+    padding-top: 100px;
+    font-weight: bold;
+}
+
+.about-section {
+    margin: 2rem 12vw;
+    text-align: center;
+    padding-top: 3rem;
+    color: #363536;
+    overflow: hidden;
+}
+
+.statement {
+    font-size: 24px;
+    text-align: left;
+    position: relative;
+    padding: 1rem;
+    margin-left: 12vw;
+    margin-right: 12vw;
+    font-weight: lighter;
+}
+
+.about-section h1 {
+    font-size: 48px;
+    display: inline-block;
+    text-align: left;
+    position: relative;
+    animation: slideIn 1s ease;
+}
+
+.about-section h1 span {
+    color: #999DFF;
+}
+
+.about-image {
+    background-image: url('../images/monicaBesitosOwner.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    margin: 2rem auto;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(246, 154, 188, 0.5); /* dropshadow with a pinkish hue */
+    animation: fadeIn 1s ease;
+}
+
+@keyframes slideIn {
+    from {
+        left: -150px;
+        top: -150px;
+    }
+    to {
+        left: 0;
+        top: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 4rem auto 5rem; /* T, L, R, B */
+    border-radius: 20px;
+    padding: 0 50px 50px;
+    box-shadow: 0px 0px 10px rgba(246, 154, 188, 0.5); /* dropshadow with a pinkish hue */
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    background-color: transparent;
+    transition: all 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-bottom-color: #fd9eb2;
+}
+
+textarea#message {
+    font-family: Questrial;
+    resize: none;
+    height: 250px;
+}
+
+small.form-text {
+    color: #999;
+    font-size: 12px;
+    font-family: Questrial;
+}
+
+button[type="submit"] {
+    background: #fd9eb2;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: lighter;
+    font-family: Questrial;
+    border-radius: 100px;
+    cursor: pointer;
+    width: 150px;
+    position: relative;
+    margin: 10px auto 0;
+    padding: .5em;
+}
+
+#submit {
+    color: #fff;
+    border: none;
+    background: none;
+    font-family: Questrial;
+    font-weight: normal;
+    font-size: 18px;
+    padding: 4px;
+}
+
+form h4 {
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+form h1 {
+    margin-bottom: 0;
+    font-size: 48px;
+}
+
+form span {
+    color: red;
+    font-weight: lighter;
+}
