@@ -17,34 +17,25 @@ body {
     top: 0;
     height: auto;
     width: 100%;
-    background: linear-gradient(90deg, rgb(253, 158, 178) 55%, rgb(64, 70, 255) 100%);
 }
 
 .navbar_item {
     float: right;
-    background-color: #FFF2F1;
-    margin-right: 43px;
-    margin-top: 12px;
-    margin-bottom: 12px;
-    width: 100px;
-    height: 25px;
-    border-radius: 50px;
+    background-color: #E5C3D1;
+    margin-right: 1rem;
+    margin-top: 2.25rem;
+    padding: 8px 0 8px 0;
+    border-radius: 6px;
     text-align: center;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
-    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-}
-
-.navbar_item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+    width: 6%;
 }
 
 .navbar_item .navbar_link {
     display: block;
-    padding: 5px;
     text-decoration: none;
-    color: #565254;
-    font-family: "Questrial";
+    color: white;
+    font-family: "Questrial", sans-serif;
+    font-size: .85vw;
 }
 
 #logo {
@@ -53,11 +44,11 @@ body {
 
 #logo_link {
     display: block;
-    margin: 12px;
-    font-family: "Lobster";
+    margin: 1rem 1rem 1rem 3rem;
+    font-family: "Sacramento", serif;
     text-decoration: none;
-    color: #FFF2F1;
-    font-size: 20px;
+    font-size: 2.75vw;
+    color: black;
 }
 
 /* END NAVBAR STUFF */
@@ -66,15 +57,14 @@ body {
 #footer {
     list-style-type: none;
     overflow: hidden;
-    margin: 0;
-    margin-top: auto;
+    /* top, right, bottom, left */
+    margin: auto 0 0;
     padding: 3px;
     height: auto;
     left: 0;
     bottom: 0;
     text-align: center;
     background: rgb(255, 202, 212);
-    background: linear-gradient(90deg, rgba(255, 202, 212, 1) 55%, rgba(153, 157, 255, 1) 100%);
 }
 
 .footer_item {
@@ -113,139 +103,133 @@ body {
 
 /* HERO IMAGE */
 .hero {
-    padding-top: 10%;
-    height: 80vh;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    height: auto;
     text-align: center;
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/heroImage.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/besitosSite_HeroIMG.png");
     /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 3rem;
+    width: 100%;
 }
 
 .hero h1 {
     text-align: center;
     color: white;
-    font-family: "Staatliches";
+    font-family: "Staatliches", sans-serif;
     font-weight: lighter;
-    font-size: 124px;
-    margin-top: 15vh;
+    font-size: 5vw;
+    margin-top: 0;
     margin-bottom: 0;
 }
 
 .hero h3 {
     text-align: center;
     color: white;
-    font-size: 36px;
+    font-size: 2vw;
     margin: 0;
-    font-family: Questrial;
+    font-family: Questrial, sans-serif;
     font-weight: lighter;
 }
 
 .hero-button {
     border: none;
-    font-family: "Questrial";
+    font-family: "Questrial", sans-serif;
     text-decoration: none;
-    font-size: 18px;
-    border-radius: 100px;
+    font-size: 1vw;
+    border-radius: 6px;
     margin-top: 20px;
+    padding: 8px 0 8px 0;
     position: relative;
     display: inline-block;
-    width: auto;
-    padding: 12px;
-    color: #565254;
-    background: #FFF2F1;
+    width: 10%;
+    color: black;
+    background: white;
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
 }
 
 /* END HERO IMAGE */
 
-/* CARDS */
-.card {
-    width: 300px;
-    height: 300px;
+/* HOME PAGE SECTIONS */
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.img-div {
     display: inline-block;
-    position: relative;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(246, 154, 188, 0.5); /* dropshadow with a pinkish hue */
-    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-    background: url("https://media.istockphoto.com/id/157399336/photo/a-large-bouquet-of-multicolored-flowers-of-different-species.jpg?s=612x612&w=0&k=20&c=bsh1ReO97fAW_00XqBcHvAjzmGgtJI0QCPbQ6OILars=");
-    background-size: cover;
-
+    width: 45%;
+    height: auto;
+    margin-right: 9rem;
 }
 
-.card:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 20px rgba(246, 154, 188, 0.5), 0 4px 8px rgba(0, 0, 0, .06);
-    z-index: 2;
+.home-section {
+    margin-bottom: 3rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
 }
 
-.cards-container {
-    margin: 5vh 12vw 5rem;
-    font-size: 36px;
-    display: grid;
-    grid-template-columns: repeat(4, 200px);
-    grid-auto-rows: auto;
-    grid-gap: 1rem;
-    column-gap: normal;
-    justify-content: space-evenly;
-    justify-items: center;
-    align-content: space-evenly;
-    align-items: center;
-    max-width: 100%
-
-}
-
-.big-header {
-    text-align: center;
-    font-size: 72px;
-    color: #FFF2F1;
-    background: #999DFFFF;
-    margin-bottom: 2rem;
-    margin-top: 0;
-    height: 30vh;
-    padding-top: 100px;
-    font-weight: bold;
-
-
-}
-
-.category {
+.home-section-text {
     text-align: left;
-    font-size: 36px;
-    margin: 0 12vw;
-}
-
-/* END CARDS */
-
-/* ABOUT PAGE STYLING
-.about-image {
-    background: url("../images/monicaBesitosOwner.jpg");
-    width: 400px;
-    height: 400px;
-    background-size: cover;
     display: inline-block;
-    margin: 0;
-    left: 100px;
-    position: relative;
-    border-radius: 10px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, .10), 0 0 6px rgba(0, 0, 0, .05);
-    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-
-} */
-
-.big-footer {
-    text-align: center;
-    font-size: 72px;
-    color: #FFF2F1;
-    background: #999DFFFF;
-    margin-top: 0;
-    margin-bottom: 0;
-    height: 30vh;
-    padding-top: 100px;
-    font-weight: bold;
+    width: 40%;
+    vertical-align: top;
 }
+
+.home-section-text h1 {
+    font-size: 36px;
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+.home-section-text p {
+    font-size: 20px;
+}
+
+.besitos-promise-section {
+    background: #60555D;
+    color: white;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    height: auto;
+}
+
+.besitos-promise-section h1 {
+    font-size: 36px;
+}
+
+.besitos-promise-section p{
+    font-size: 24px;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.call-to-action {
+    border: none;
+    text-align: center;
+    font-family: "Questrial", sans-serif;
+    text-decoration: none;
+    font-size: 1vw;
+    border-radius: 6px;
+    margin-top: 20px;
+    margin-left: 30%;
+    padding: 8px 0 8px 0;
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    color: white;
+    background: #9392C7;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+/* END HOME PAGE SECTIONS */
 
 .about-section {
     margin: 2rem 12vw;
@@ -354,7 +338,7 @@ textarea:focus {
 }
 
 textarea#message {
-    font-family: Questrial;
+    font-family: Questrial, serif;
     resize: none;
     height: 250px;
 }
