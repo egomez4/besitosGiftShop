@@ -21,9 +21,9 @@ body {
 
 .navbar_item {
     float: right;
-    background-color: #E5C3D1;
+    background-color: #d39aa9;
     margin-right: 1rem;
-    margin-top: 2.25rem;
+    margin-top: 1.5rem;
     padding: 8px 0 8px 0;
     border-radius: 6px;
     text-align: center;
@@ -45,9 +45,9 @@ body {
 #logo_link {
     display: block;
     margin: 1rem 1rem 1rem 3rem;
-    font-family: "Sacramento", serif;
+    font-family: "Style Script";
     text-decoration: none;
-    font-size: 2.75vw;
+    font-size: 2vw;
     color: black;
 }
 
@@ -168,6 +168,13 @@ img {
     margin-right: 9rem;
 }
 
+.img-div2 {
+    display: inline-block;
+    width: 35%;
+    height: auto;
+    margin-left: 11rem;
+}
+
 .home-section {
     margin-bottom: 3rem;
     margin-left: 8rem;
@@ -181,13 +188,21 @@ img {
     vertical-align: top;
 }
 
-.home-section-text h1 {
+.home-section-text2 {
+    text-align: left;
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    margin-left: 5rem;
+}
+
+.home-section-text h1, .home-section-text2 h1 {
     font-size: 36px;
     font-weight: bolder;
     margin-bottom: 0;
 }
 
-.home-section-text p {
+.home-section-text p, .home-section-text2 p {
     font-size: 20px;
 }
 
@@ -199,6 +214,7 @@ img {
     padding-bottom: 1rem;
     width: 100%;
     height: auto;
+    margin-bottom: 3rem;
 }
 
 .besitos-promise-section h1 {
@@ -209,6 +225,7 @@ img {
     font-size: 24px;
     width: 40%;
     margin: 0 auto;
+
 }
 
 .call-to-action {
@@ -217,6 +234,7 @@ img {
     font-family: "Questrial", sans-serif;
     text-decoration: none;
     font-size: 1vw;
+    font-weight: normal;
     border-radius: 6px;
     margin-top: 20px;
     margin-left: 30%;
