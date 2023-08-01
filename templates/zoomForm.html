@@ -11,11 +11,15 @@
         <label for="name">Name</label>
         {{ form.name }}
 
+        <label for="email">Email</label>
+        {{ form.email }}
+
         <label for="date">Date</label>
         <input type="date" id="date" name="date" value="{{ today_string }}" min={{ today_string }}>
 
         <label for="start_time">Start Time</label>
         <select id="start_time" name="start_time">
+            <option disabled selected value="">Select a time</option>
             {% set current_hour = current_time.hour %}
             {% set current_minute = current_time.minute %}
             {% for hour in range(8, 21) %}
@@ -32,7 +36,7 @@
         <label for="agenda">Agenda</label>
         {{ form.agenda }}
 
-        <button type="submit">Schedule Meeting</button>
+        <button type="submit">Book</button>
     </form>
 
     <script>
@@ -49,11 +53,12 @@
         function handleDateChange() {
             // loop through options
             for (let i = 0; i < times.length; i++) {
-                // convert string to date object in 24 hour format
+                // convert string to date object in 24-hour format
                 let time_str = (times[i].value).slice(0, -3) + ":00";
                 let dateTimeStr = document.getElementById("date").value + " " + time_str;
                 let dateTimeObj = new Date(dateTimeStr)
 
+                // disable and hide time option if current date/time is passed the selected date/time
                 if (
                     dateTimeObj.getDate() === currDateTime.getDate() &&
                     (currDateTime.getHours() > dateTimeObj.getHours() ||
@@ -61,9 +66,10 @@
                             currDateTime.getMinutes() >= dateTimeObj.getMinutes()))
                 ) {
                     times[i].disabled = true;
-                    //alert((currDateTime.getMinutes() + " " + dateTimeObj.getMinutes()));
+                    times[i].hidden = true;
                 } else {
                     times[i].disabled = false;
+                    times[i].hidden = false;
                 }
 
             }
@@ -72,5 +78,8 @@
 
         // everytime the user picks a date disable appropriate options
         document.getElementById("date").addEventListener('change', handleDateChange);
+
+        // disable times in the past once the page loads
+        document.addEventListener('DOMContentLoaded', handleDateChange);
     </script>
 {% endblock %}

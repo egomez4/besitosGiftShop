@@ -51,12 +51,14 @@ class ContactForm(FlaskForm):
 
 class ZoomForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
-    # start_time = DateTimeLocalField('Start Time', format='%Y-%m-%dT%H:%M', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+
     start_time = SelectField('Start Time', validators=[DataRequired()], choices=select_field_choices)
     date = DateField('Date', validators=[DataRequired()])
     duration = 30  # 30 minutes meeting
     agenda = TextAreaField('Agenda', validators=[DataRequired()])
     timezone = 'America/New_York'
+
     submit = SubmitField('Send Email')
 
 
@@ -155,6 +157,7 @@ def schedule_meeting():
             timezone = form.timezone
             time = form.start_time.data
             date = form.date.data
+            email = form.email.data
 
             # combine the start time and date into one string
             start_time = str(date) + f'T{time}'
@@ -193,10 +196,27 @@ def schedule_meeting():
                 # create the meeting
                 response = requests.post(url.format(userId='me'), headers=headers, json=data)
 
-                # send email to user and besitos
+            if response.status_code == 201:
+                # send the client an email with info about their meeting
+                zoom_details = response.json()
 
-                return response.json()  # reroute to page saying meeting scheduled check email or something
+                msg_body = f"Thank you for choosing Besitos Gift Shop. Included in this email are the details for" \
+                           f" your upcoming consultation via Zoom. Please be sure to save this email as your" \
+                           f" meeting link is included and it is the only way for you to be able to attend the " \
+                           f"consultation." \
+                           f"\n\nTopic: {data['topic']}" \
+                           f"\nStart Time: {data['start_time'].replace('T', ' ')} EST" \
+                           f"\nDuration: 30 Minutes" \
+                           f"\nAgenda: {data['agenda']}" \
+                           f"\nJoin Link: {zoom_details['join_url']}"
 
+                message = Message(subject='Zoom Consultation Besitos Gift Shop', recipients=[f'{email}'],
+                                  body=msg_body, sender='Besitos Gift Shop')
+                mail.send(message)
+
+                return redirect(url_for('index'))  # reroute to page saying meeting scheduled check email or something
+            elif response.status_code == 400 or 404:
+                return 'There was an error processing your request.'
     return render_template('zoomForm.html', form=form, error_msg=None, today_string=today_string,
                            current_time=current_time)
 

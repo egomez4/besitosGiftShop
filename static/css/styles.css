@@ -43,12 +43,13 @@ body {
 }
 
 #logo_link {
-    display: block;
+    display: inline-block;
     margin: 1rem 1rem 1rem 3rem;
     font-family: "Style Script";
     text-decoration: none;
     font-size: 2vw;
     color: black;
+    width: auto;
 }
 
 /* END NAVBAR STUFF */
@@ -64,12 +65,21 @@ body {
     left: 0;
     bottom: 0;
     text-align: center;
-    background: rgb(255, 202, 212);
+    background: #D39AA9FF;
+}
+
+#logo_link_footer {
+    display: inline-block;
+    font-family: "Style Script";
+    text-decoration: none;
+    font-size: 2vw;
+    color: white;
+    width: auto;
+    margin-top: 1rem;
 }
 
 .footer_item {
-    display: block;
-    float: left;
+    display: inline-block;
     margin-left: 12px;
     font-family: FontAwesome;
     font-size: 24px;
@@ -90,13 +100,9 @@ body {
 }
 
 .fa-instagram {
-    background: #f09433;
-    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+    background: none;
+    display: inline-block;
     color: white;
-
 }
 
 /* END ICONS */
@@ -120,9 +126,9 @@ body {
 .hero h1 {
     text-align: center;
     color: white;
-    font-family: "Staatliches", sans-serif;
-    font-weight: lighter;
-    font-size: 5vw;
+    font-family: "Questrial", sans-serif;
+    font-weight: bolder;
+    font-size: 4vw;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -130,7 +136,7 @@ body {
 .hero h3 {
     text-align: center;
     color: white;
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin: 0;
     font-family: Questrial, sans-serif;
     font-weight: lighter;
@@ -175,8 +181,15 @@ img {
     margin-left: 11rem;
 }
 
+.img-div3 {
+    display: inline-block;
+    width: 35%;
+    height: auto;
+    margin-right: 15rem;
+}
+
 .home-section {
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
     margin-left: 8rem;
     margin-right: 8rem;
 }
@@ -243,8 +256,37 @@ img {
     display: inline-block;
     width: 30%;
     color: white;
-    background: #9392C7;
+    background: #D39AA9FF;
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+.how-it-works{
+    text-align: center;
+}
+
+.how-it-works h1{
+    font-size: 2vw;
+}
+
+.how-it-works-step{
+    background-color: #D39AA9FF;
+    display: inline-block;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 100px;
+    text-align: center;
+    margin-right: 12rem;
+    margin-left: 12rem;
+}
+.how-it-works-step-container{
+    width: auto;
+    display: inline-block;
+}
+
+.how-it-works-step h1{
+    margin-top: 33%;
+    color: white;
+    font-size: 2vw;
 }
 
 /* END HOME PAGE SECTIONS */
