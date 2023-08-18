@@ -234,7 +234,7 @@ img {
     font-size: 36px;
 }
 
-.besitos-promise-section p{
+.besitos-promise-section p {
     font-size: 24px;
     width: 40%;
     margin: 0 auto;
@@ -260,15 +260,15 @@ img {
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
 }
 
-.how-it-works{
+.how-it-works {
     text-align: center;
 }
 
-.how-it-works h1{
+.how-it-works h1 {
     font-size: 2vw;
 }
 
-.how-it-works-step{
+.how-it-works-step {
     background-color: #D39AA9FF;
     display: inline-block;
     width: 5vw;
@@ -278,12 +278,13 @@ img {
     margin-right: 12rem;
     margin-left: 12rem;
 }
-.how-it-works-step-container{
+
+.how-it-works-step-container {
     width: auto;
     display: inline-block;
 }
 
-.how-it-works-step h1{
+.how-it-works-step h1 {
     margin-top: 33%;
     color: white;
     font-size: 2vw;
@@ -356,14 +357,41 @@ img {
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 4rem auto 5rem; /* T, L, R, B */
-    border-radius: 20px;
+    display: inline-block;
+    width: 25vw;
+    margin-left: 3rem; /* T, L, R, B */
     padding: 0 50px 50px;
-    box-shadow: 0px 0px 10px rgba(246, 154, 188, 0.5); /* dropshadow with a pinkish hue */
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+.contact-section {
+    padding-right: 9rem;
+    padding-top: 9rem;
+    padding-left: 25%;
+    overflow: hidden;
+}
+
+.contact-text-container {
+    float: left;
+}
+
+.contact-text-container h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+
+.contact-text-container h3 {
+    display: block;
+    margin-top: 3rem;
+}
+
+.contact-line {
+    border-width: 3px; /* Customize line thickness */
+    border-style: solid;
+    float: left;
+    width: 50%;
+    border-color: #D39AA9FF;
+    display: block;
 }
 
 .form-group {
@@ -400,7 +428,8 @@ textarea:focus {
 textarea#message {
     font-family: Questrial, serif;
     resize: none;
-    height: 250px;
+    width: 100%;
+    height: 10vh;
 }
 
 small.form-text {
@@ -410,15 +439,15 @@ small.form-text {
 }
 
 button[type="submit"] {
-    background: #fd9eb2;
+    background: #D39AA9FF;
     color: #fff;
     border: none;
     font-size: 16px;
     font-weight: lighter;
     font-family: Questrial;
-    border-radius: 100px;
+    border-radius: 5px;
     cursor: pointer;
-    width: 150px;
+    width: 100%;
     position: relative;
     margin: 10px auto 0;
     padding: .5em;

@@ -27,8 +27,8 @@ app.config['MAIL_DEFAULT_SENDER'] = 'b3sit0sgiftsh0p@gmail.com'
 app.config['MAIL_USE_TLS'] = True
 
 # Zoom API Creds
-API_SECRET = os.getenv('ZOOM_SECRET')
-API_KEY = os.getenv('ZOOM_KEY')
+# API_SECRET = os.getenv('ZOOM_SECRET')
+# API_KEY = os.getenv('ZOOM_KEY')
 
 # to send emails
 mail = Mail(app)
@@ -90,8 +90,9 @@ def contact():
         mail.send(message)
 
         # send confirmation email
-        conf_message = f"Dear {name}, \n\nThank you for choosing Besitos Gift Shop! We have received your message and will be " \
-                       "in contact with you shortly! Have a great day! \n\nXOXO -Monica (980)-327-8979"
+        conf_message = f"Dear {name}, \n\nThank you for choosing Besitos Gift Shop! We have received your message" \
+                       " and will be in contact with you shortly! Have a great day! \n\nBesitos Gift Shop (" \
+                       "980)-443-0214 "
         conf_subject = 'Besitos Gift Shop Confirmation'
         confirmation = Message(sender='b3sit0sgiftsh0p@gmail.com', recipients=[email], subject=conf_subject,
                                body=conf_message)
@@ -107,118 +108,6 @@ def contact():
 @app.route('/about')
 def about():
     return render_template('about.html', title='About')
-
-
-@app.route('/schedule-meeting', methods=['POST', 'GET'])
-def schedule_meeting():
-    form = ZoomForm()
-    # user cannot select dates in the past (i.e. yesterday and so on)
-    today = datetime.today().date()
-    today_string = today.strftime("%Y-%m-%d")
-
-    current_time = datetime.now()
-    curr_timezone = current_time.astimezone().tzinfo
-
-    # populate list of unavailable times
-    # GET ACCESS TOKEN
-    # Set the API endpoint
-    oauth_url = 'https://zoom.us/oauth/token'
-
-    # Set the request parameters
-    data = {
-        'grant_type': 'account_credentials',
-        'client_id': os.getenv("ZOOM_ID"),
-        'client_secret': os.getenv('ZOOM_SECRET'),
-        'account_id': os.getenv('ACCOUNT_ID')
-    }
-
-    # Make the request
-    oauth_response = requests.post(oauth_url, data=data)
-
-    # Parse the response
-    if oauth_response.status_code == 200:
-        # access token used to make request
-        access_token = oauth_response.json()['access_token']
-
-        url = 'https://api.zoom.us/v2/users/{userId}/meetings'
-        headers = {'Authorization': 'Bearer %s' % access_token, 'Content-Type': 'application/json'}
-
-        meetings_list_response = requests.get(url.format(userId='me'), headers=headers)
-        unavailable_times = []
-        # build meetings list
-        for meeting in meetings_list_response.json()['meetings']:
-            # remove the Z and add to unavailable times list
-            unavailable_times.append(meeting['start_time'].replace('Z', ''))
-
-        if form.validate_on_submit():
-            name = form.name.data
-            duration = form.duration
-            agenda = form.agenda.data
-            timezone = form.timezone
-            time = form.start_time.data
-            date = form.date.data
-            email = form.email.data
-
-            # combine the start time and date into one string
-            start_time = str(date) + f'T{time}'
-
-            # convert starttime to gmt for comparison
-            est_time = start_time
-            est_timezone = pytz.timezone('US/Eastern')
-            gmt_timezone = pytz.timezone('GMT')
-
-            est_localized = est_timezone.localize(datetime.strptime(est_time, '%Y-%m-%dT%H:%M:%S'))
-            gmt_localized = est_localized.astimezone(gmt_timezone)
-            gmt_time_string = gmt_localized.strftime('%Y-%m-%dT%H:%M:%S')
-
-            # check if the user selected a booked time
-            if gmt_time_string in unavailable_times:
-                error = 'The selected time has already been booked. Please select another time.'
-                return render_template('zoomForm.html', error_msg=error, form=form, today_string=today_string,
-                                       current_time=current_time)
-            else:
-                # make the request
-                # Set up the API request
-
-                data = {
-                    'topic': f'Consultation for {name}',
-                    'start_time': start_time,
-                    'duration': 30,
-                    'agenda': agenda,
-                    'timezone': str(curr_timezone),
-                    'settings': {
-                        'join_before_host': False,
-                        'mute_upon_entry': True,
-                        'auto_recording': 'none'
-                    }
-                }
-
-                # create the meeting
-                response = requests.post(url.format(userId='me'), headers=headers, json=data)
-
-            if response.status_code == 201:
-                # send the client an email with info about their meeting
-                zoom_details = response.json()
-
-                msg_body = f"Thank you for choosing Besitos Gift Shop. Included in this email are the details for" \
-                           f" your upcoming consultation via Zoom. Please be sure to save this email as your" \
-                           f" meeting link is included and it is the only way for you to be able to attend the " \
-                           f"consultation." \
-                           f"\n\nTopic: {data['topic']}" \
-                           f"\nStart Time: {data['start_time'].replace('T', ' ')} EST" \
-                           f"\nDuration: 30 Minutes" \
-                           f"\nAgenda: {data['agenda']}" \
-                           f"\nJoin Link: {zoom_details['join_url']}"
-
-                message = Message(subject='Zoom Consultation Besitos Gift Shop', recipients=[f'{email}'],
-                                  body=msg_body, sender='Besitos Gift Shop')
-                mail.send(message)
-
-                return redirect(url_for('index'))  # reroute to page saying meeting scheduled check email or something
-            elif response.status_code == 400 or 404:
-                return 'There was an error processing your request.'
-    return render_template('zoomForm.html', form=form, error_msg=None, today_string=today_string,
-                           current_time=current_time)
 
 
 if __name__ == "__main__":
