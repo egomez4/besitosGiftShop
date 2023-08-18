@@ -292,6 +292,7 @@ img {
 
 /* END HOME PAGE SECTIONS */
 
+/* ABOUT PAGE */
 .about-section {
     margin: 2rem 12vw;
     text-align: center;
@@ -356,6 +357,9 @@ img {
     }
 }
 
+/* END ABOUT PAGE */
+
+/* CONTACT PAGE */
 form {
     display: inline-block;
     width: 25vw;
@@ -476,4 +480,12 @@ form h1 {
 form span {
     color: red;
     font-weight: lighter;
+}
+
+/* END CONTACT PAGE */
+
+/* FORM SUBMITTED PAGE */
+.submitted-msg {
+    margin-left: 9rem;
+    margin-right: 9rem;
 }

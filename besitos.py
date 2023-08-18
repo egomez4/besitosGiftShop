@@ -1,18 +1,12 @@
 import os
 import secrets
-import requests
-import pytz
-
-from datetime import datetime, date
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField, DateTimeField, IntegerField, \
-    DateTimeLocalField, SelectField, DateField
+from wtforms import StringField, TextAreaField, SubmitField, SelectField, DateField
 from wtforms.validators import DataRequired, Email
 from dotenv import load_dotenv
-from flask import Flask, request, jsonify, render_template, session, redirect, url_for, flash
+from flask import Flask, render_template, redirect, url_for
 from flask_mail import Mail, Message
 from email_validator import validate_email, EmailNotValidError
-from zoomus import ZoomClient
 
 # Configure the Flask app and set a secret key for flask_session management
 load_dotenv()
@@ -26,18 +20,14 @@ app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
 app.config['MAIL_DEFAULT_SENDER'] = 'b3sit0sgiftsh0p@gmail.com'
 app.config['MAIL_USE_TLS'] = True
 
-# Zoom API Creds
-# API_SECRET = os.getenv('ZOOM_SECRET')
-# API_KEY = os.getenv('ZOOM_KEY')
-
 # to send emails
 mail = Mail(app)
 
 # Fields
-select_field_choices = ['08:00:00', '08:30:00', '09:00:00', '09:30:00', '10:00:00', '10:30:00', '11:00:00',
-                        '11:30:00', '12:00:00', '12:30:00', '13:00:00', '13:30:00', '14:00:00', '14:30:00',
-                        '15:00:00', '15:30:00', '16:00:00', '16:30:00', '17:00:00', '17:30:00', '18:00:00',
-                        '18:30:00', '19:00:00', '19:30:00', '20:00:00', '20:30:00']
+# select_field_choices = ['08:00:00', '08:30:00', '09:00:00', '09:30:00', '10:00:00', '10:30:00', '11:00:00',
+#                        '11:30:00', '12:00:00', '12:30:00', '13:00:00', '13:30:00', '14:00:00', '14:30:00',
+#                        '15:00:00', '15:30:00', '16:00:00', '16:30:00', '17:00:00', '17:30:00', '18:00:00',
+#                        '18:30:00', '19:00:00', '19:30:00', '20:00:00', '20:30:00']
 
 
 # class for form
@@ -46,19 +36,6 @@ class ContactForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     subject = StringField('Subject', validators=[DataRequired()])
     message = TextAreaField('Message', validators=[DataRequired()])
-    submit = SubmitField('Send Email')
-
-
-class ZoomForm(FlaskForm):
-    name = StringField('Name', validators=[DataRequired()])
-    email = StringField('Email', validators=[DataRequired(), Email()])
-
-    start_time = SelectField('Start Time', validators=[DataRequired()], choices=select_field_choices)
-    date = DateField('Date', validators=[DataRequired()])
-    duration = 30  # 30 minutes meeting
-    agenda = TextAreaField('Agenda', validators=[DataRequired()])
-    timezone = 'America/New_York'
-
     submit = SubmitField('Send Email')
 
 
