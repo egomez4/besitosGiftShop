@@ -36,7 +36,7 @@ body {
     .navbar_item .navbar_link {
         float: right;
         display: inline-block;
-        background: #fd9eb2;
+        background:#D39AA9FF;
         text-decoration: none;
         border-radius: 4px;
         width: auto;
