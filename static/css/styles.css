@@ -1,491 +1,825 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
 body {
-    margin: 0;
-    font-family: "Questrial";
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: #FFF2F1;
-}
-
-/* NAVBAR STUFF*/
-#navbar {
-    list-style-type: none;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    left: 0;
-    top: 0;
-    height: auto;
-    width: 100%;
-}
-
-.navbar_item {
-    float: right;
-    background-color: #d39aa9;
-    margin-right: 1rem;
-    margin-top: 1.5rem;
-    padding: 8px 0 8px 0;
-    border-radius: 6px;
-    text-align: center;
-    width: 6%;
-}
-
-.navbar_item .navbar_link {
-    display: block;
-    text-decoration: none;
-    color: white;
-    font-family: "Questrial", sans-serif;
-    font-size: .85vw;
-}
-
-#logo {
-    float: left;
-}
-
-#logo_link {
-    display: inline-block;
-    margin: 1rem 1rem 1rem 3rem;
-    font-family: "Style Script";
-    text-decoration: none;
-    font-size: 2vw;
-    color: black;
-    width: auto;
-}
-
-/* END NAVBAR STUFF */
-
-/* FOOTER */
-#footer {
-    list-style-type: none;
-    overflow: hidden;
-    /* top, right, bottom, left */
-    margin: auto 0 0;
-    padding: 3px;
-    height: auto;
-    left: 0;
-    bottom: 0;
-    text-align: center;
-    background: #D39AA9FF;
-}
-
-#logo_link_footer {
-    display: inline-block;
-    font-family: "Style Script";
-    text-decoration: none;
-    font-size: 2vw;
-    color: white;
-    width: auto;
-    margin-top: 1rem;
-}
-
-.footer_item {
-    display: inline-block;
-    margin-left: 12px;
-    font-family: FontAwesome;
-    font-size: 24px;
-}
-
-/* END FOOTER */
-
-/* ICONS */
-
-.fa {
-    padding: 8px;
-    width: auto;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    border-radius: 100%;
-
-}
-
-.fa-instagram {
-    background: none;
-    display: inline-block;
-    color: white;
-}
-
-/* END ICONS */
-
-/* HERO IMAGE */
-.hero {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    height: auto;
-    text-align: center;
-    position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/besitosSite_HeroIMG.png");
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: 3rem;
-    width: 100%;
-}
-
-.hero h1 {
-    text-align: center;
-    color: white;
-    font-family: "Questrial", sans-serif;
-    font-weight: bolder;
-    font-size: 4vw;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.hero h3 {
-    text-align: center;
-    color: white;
-    font-size: 1.5vw;
-    margin: 0;
-    font-family: Questrial, sans-serif;
-    font-weight: lighter;
-}
-
-.hero-button {
-    border: none;
-    font-family: "Questrial", sans-serif;
-    text-decoration: none;
-    font-size: 1vw;
-    border-radius: 6px;
-    margin-top: 20px;
-    padding: 8px 0 8px 0;
-    position: relative;
-    display: inline-block;
-    width: 10%;
-    color: black;
+    font-family: "Questrial", serif;
+    min-height: 100%;
+    max-width: 100%;
+    margin: 0 0 150px;
     background: white;
-    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    padding: 0;
 }
 
-/* END HERO IMAGE */
 
-/* HOME PAGE SECTIONS */
+/* Mobile devices in portrait and landscape mode */
+@media screen and (max-width: 1279px) {
 
-img {
-    width: 100%;
-    height: auto;
-}
-
-.img-div {
-    display: inline-block;
-    width: 45%;
-    height: auto;
-    margin-right: 9rem;
-}
-
-.img-div2 {
-    display: inline-block;
-    width: 35%;
-    height: auto;
-    margin-left: 11rem;
-}
-
-.img-div3 {
-    display: inline-block;
-    width: 35%;
-    height: auto;
-    margin-right: 15rem;
-}
-
-.home-section {
-    margin-bottom: 6rem;
-    margin-left: 8rem;
-    margin-right: 8rem;
-}
-
-.home-section-text {
-    text-align: left;
-    display: inline-block;
-    width: 40%;
-    vertical-align: top;
-}
-
-.home-section-text2 {
-    text-align: left;
-    display: inline-block;
-    width: 40%;
-    vertical-align: top;
-    margin-left: 5rem;
-}
-
-.home-section-text h1, .home-section-text2 h1 {
-    font-size: 36px;
-    font-weight: bolder;
-    margin-bottom: 0;
-}
-
-.home-section-text p, .home-section-text2 p {
-    font-size: 20px;
-}
-
-.besitos-promise-section {
-    background: #60555D;
-    color: white;
-    text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    width: 100%;
-    height: auto;
-    margin-bottom: 3rem;
-}
-
-.besitos-promise-section h1 {
-    font-size: 36px;
-}
-
-.besitos-promise-section p {
-    font-size: 24px;
-    width: 40%;
-    margin: 0 auto;
-
-}
-
-.call-to-action {
-    border: none;
-    text-align: center;
-    font-family: "Questrial", sans-serif;
-    text-decoration: none;
-    font-size: 1vw;
-    font-weight: normal;
-    border-radius: 6px;
-    margin-top: 20px;
-    margin-left: 30%;
-    padding: 8px 0 8px 0;
-    position: relative;
-    display: inline-block;
-    width: 30%;
-    color: white;
-    background: #D39AA9FF;
-    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-}
-
-.how-it-works {
-    text-align: center;
-}
-
-.how-it-works h1 {
-    font-size: 2vw;
-}
-
-.how-it-works-step {
-    background-color: #D39AA9FF;
-    display: inline-block;
-    width: 5vw;
-    height: 5vw;
-    border-radius: 100px;
-    text-align: center;
-    margin-right: 12rem;
-    margin-left: 12rem;
-}
-
-.how-it-works-step-container {
-    width: auto;
-    display: inline-block;
-}
-
-.how-it-works-step h1 {
-    margin-top: 33%;
-    color: white;
-    font-size: 2vw;
-}
-
-/* END HOME PAGE SECTIONS */
-
-/* ABOUT PAGE */
-.about-section {
-    margin: 2rem 12vw;
-    text-align: center;
-    padding-top: 3rem;
-    color: #363536;
-    overflow: hidden;
-}
-
-.statement {
-    font-size: 24px;
-    text-align: left;
-    position: relative;
-    padding: 1rem;
-    margin-left: 12vw;
-    margin-right: 12vw;
-    font-weight: lighter;
-}
-
-.about-section h1 {
-    font-size: 48px;
-    display: inline-block;
-    text-align: left;
-    position: relative;
-    animation: slideIn 1s ease;
-}
-
-.about-section h1 span {
-    color: #999DFF;
-}
-
-.about-image {
-    background-image: url('../images/monicaBesitosOwner.jpg');
-    background-size: cover;
-    background-position: center;
-    width: 300px;
-    height: 300px;
-    margin: 2rem auto;
-    border-radius: 50%;
-    box-shadow: 0px 0px 10px rgba(246, 154, 188, 0.5); /* dropshadow with a pinkish hue */
-    animation: fadeIn 1s ease;
-}
-
-@keyframes slideIn {
-    from {
-        left: -150px;
-        top: -150px;
+    /* Hide hero image and buttons (only for large displays) */
+    .hero {
+        display: none;
     }
-    to {
-        left: 0;
+
+    #navbar {
+        width: 100%;
+        list-style-type: none;
+        font-size: 12px;
+        padding: 0;
         top: 0;
+        left: 0;
+        margin: 0;
+        height: 46px;
+        background-color: white;
     }
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
+    .navbar_item .navbar_link {
+        float: right;
+        display: inline-block;
+        background: #fd9eb2;
+        text-decoration: none;
+        border-radius: 4px;
+        width: auto;
+        height: 15px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 8px;
+        padding-bottom: 4px;
+        margin-top: 10px;
+        color: white;
+        font-size: 10px;
     }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
 
-/* END ABOUT PAGE */
+    #footer {
+        list-style-type: none;
+        overflow: hidden;
+        /* top, right, bottom, left */
+        margin: auto 0 0;
+        padding: 3px;
+        height: auto;
+        width: calc(100% - 6px);
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        text-align: center;
+        background: #D39AA9FF;
+    }
+
+    #footer .logo_link_footer {
+        display: inline-block;
+        font-family: "Style Script";
+        text-decoration: none;
+        color: white;
+        font-size: 36px;
+    }
+
+    .besitos_icon {
+        float: left;
+        margin-left: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 8%;
+    }
+
+    #logo_link {
+        display: none;
+    }
+
+    .fa-instagram {
+        background: none;
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        margin-top: 1rem;
+    }
+
+    .call-to-action {
+        border: none;
+        text-align: center;
+        font-family: "Questrial", sans-serif;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: normal;
+        border-radius: 6px;
+        margin-bottom: 25px;
+        padding: 8px 6px 8px 6px;
+        width: 20%;
+        margin-left: 38%;
+        color: white;
+        display: block;
+        background: #D39AA9FF;
+        transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    }
+
+    h1, p {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .besitos-promise-section {
+        background: #60555D;
+        color: white;
+        text-align: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        width: 100%;
+        height: auto;
+        margin-bottom: 3rem;
+    }
+
+    .about-section h1 {
+        display: none;
+    }
+
+    .statement {
+        margin-left: 40px;
+        margin-right: 40px;
+        display: block;
+    }
+
+    .about-image {
+        background-image: url('../images/monicaBesitosOwner.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 130px;
+        height: 130px;
+        margin: 2rem auto;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px rgba(246, 154, 188, 0.5); /* dropshadow with a pinkish hue */
+        animation: fadeIn 1s ease;
+    }
+
+    .how-it-works {
+        text-align: center;
+    }
+
+    .how-it-works h1 {
+        font-size: 36px;
+    }
+
+    .how-it-works-step {
+        background-color: #D39AA9FF;
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .how-it-works-step-container {
+        width: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .how-it-works-step h1 {
+        color: white;
+        font-size: 75px;
+        display: block;
+        padding-top: 10px;
+        max-height: 100px;
+    }
+
+}
 
 /* CONTACT PAGE */
-form {
-    display: inline-block;
-    width: 25vw;
-    margin-left: 3rem; /* T, L, R, B */
-    padding: 0 50px 50px;
-    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    form {
+        display: inline-block;
+        margin: 0 auto;
+        width: 100%;
+        overflow: hidden;
+        padding-left: 25px;
+        padding-right: 25px;
+        transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    }
+
+    .contact-section {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .contact-text-container {
+        display: block;
+        margin-bottom: 50px;
+    }
+
+    .contact-text-container h1 {
+        font-size: 60px;
+        margin-bottom: 0;
+    }
+
+    .contact-text-container h3 {
+        display: block;
+        margin-top: 2rem;
+        margin-left: 5%;
+    }
+
+    .contact-line {
+        border-width: 3px; /* Customize line thickness */
+        border-style: solid;
+        float: left;
+        width: 50%;
+        border-color: #D39AA9FF;
+        display: block;
+        margin-left: 5%;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        width: 80%;
+    }
+
+    label {
+        font-size: 16px;
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        border: none;
+        border-bottom: 2px solid #ddd;
+        padding: 10px;
+        margin: 0 auto;
+        font-size: 16px;
+        width: 100%;
+        background-color: transparent;
+        transition: all 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+        outline: none;
+        border-bottom-color: #fd9eb2;
+    }
+
+    textarea#message {
+        font-family: Questrial, serif;
+        resize: none;
+        width: 100%;
+        height: 10vh;
+    }
+
+    small.form-text {
+        color: #999;
+        font-size: 12px;
+        font-family: Questrial;
+    }
+
+    button[type="submit"] {
+        background: #D39AA9FF;
+        color: #fff;
+        border: none;
+        font-size: 16px;
+        font-weight: lighter;
+        font-family: Questrial;
+        border-radius: 5px;
+        cursor: pointer;
+        width: auto;
+        position: relative;
+        margin: 0 auto;
+        padding: 8px;
+        display: block;
+        left: -15px;
+    }
+
+    #submit {
+        color: #fff;
+        border: none;
+        background: none;
+        font-family: Questrial;
+        font-weight: normal;
+        font-size: 18px;
+    }
+
+
+    form h4 {
+        margin-bottom: 40px;
+        font-weight: bold;
+    }
+
+    form h1 {
+        margin-bottom: 0;
+        font-size: 48px;
+    }
+
+    form span {
+        color: red;
+        font-weight: lighter;
+    }
+
+    /* END CONTACT PAGE */
+
+/* Small desktops and laptops */
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+    /* Your styles here */
 }
 
-.contact-section {
-    padding-right: 9rem;
-    padding-top: 9rem;
-    padding-left: 25%;
-    overflow: hidden;
+/* Medium desktops */
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+    /* Your styles here */
 }
 
-.contact-text-container {
-    float: left;
-}
+/* Large desktops and high-resolution displays */
+@media screen and (min-width: 1920px) {
+    /* NAVBAR STUFF*/
 
-.contact-text-container h1 {
-    font-size: 4rem;
-    margin-bottom: 0;
-}
+    #navbar_item, .besitos_icon {
+        display: none;
+    }
 
-.contact-text-container h3 {
-    display: block;
-    margin-top: 3rem;
-}
+    #navbar {
+        list-style-type: none;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        left: 0;
+        top: 0;
+        height: auto;
+        width: 100%;
+    }
 
-.contact-line {
-    border-width: 3px; /* Customize line thickness */
-    border-style: solid;
-    float: left;
-    width: 50%;
-    border-color: #D39AA9FF;
-    display: block;
-}
+    .navbar_item {
+        list-style-type: none;
+        float: right;
+        background-color: #d39aa9;
+        margin-right: 1rem;
+        margin-top: 1.5rem;
+        padding: 8px 0 8px 0;
+        border-radius: 6px;
+        text-align: center;
+        width: 6%;
+    }
 
-.form-group {
-    margin-bottom: 20px;
-}
+    .navbar_item .navbar_link {
+        display: block;
+        list-style-type: none;
+        text-decoration: none;
+        color: white;
+        font-family: "Questrial", sans-serif;
+        font-size: .85vw;
+    }
 
-label {
-    font-size: 16px;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 5px;
-    display: block;
-}
+    #logo {
+        list-style-type: none;
+        float: left;
+    }
 
-input[type="text"],
-input[type="email"],
-textarea {
-    border: none;
-    border-bottom: 2px solid #ddd;
-    padding: 10px;
-    font-size: 16px;
-    width: 100%;
-    background-color: transparent;
-    transition: all 0.3s;
-}
+    #logo::marker {
+        list-style-type: none;
+    }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-    outline: none;
-    border-bottom-color: #fd9eb2;
-}
+    #logo_link {
+        list-style-type: none;
+        display: inline-block;
+        margin: 1rem 1rem 1rem 3rem;
+        font-family: "Style Script";
+        text-decoration: none;
+        font-size: 2vw;
+        color: black;
+        width: auto;
+    }
 
-textarea#message {
-    font-family: Questrial, serif;
-    resize: none;
-    width: 100%;
-    height: 10vh;
-}
+    /* END NAVBAR STUFF */
+    /* FOOTER */
+    #footer {
+        list-style-type: none;
+        overflow: hidden;
+        /* top, right, bottom, left */
+        margin: auto 0 0;
+        padding: 3px;
+        height: auto;
+        width: calc(100% - 8px);
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        text-align: center;
+        background: #D39AA9FF;
+    }
 
-small.form-text {
-    color: #999;
-    font-size: 12px;
-    font-family: Questrial;
-}
+    .logo_link_footer {
+        display: inline-block;
+        font-family: "Style Script";
+        text-decoration: none;
+        font-size: 2vw;
+        color: white;
+        width: auto;
+        margin-top: 1rem;
+    }
 
-button[type="submit"] {
-    background: #D39AA9FF;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    font-weight: lighter;
-    font-family: Questrial;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    position: relative;
-    margin: 10px auto 0;
-    padding: .5em;
-}
+    .footer_item {
+        display: inline-block;
+        margin-left: 12px;
+        font-family: FontAwesome;
+        font-size: 24px;
+    }
 
-#submit {
-    color: #fff;
-    border: none;
-    background: none;
-    font-family: Questrial;
-    font-weight: normal;
-    font-size: 18px;
-    padding: 4px;
-}
+    /* END FOOTER */
+    /* ICONS */
+    .fa {
+        padding: 8px;
+        width: auto;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 100%;
 
-form h4 {
-    margin-bottom: 40px;
-    font-weight: bold;
-}
+    }
 
-form h1 {
-    margin-bottom: 0;
-    font-size: 48px;
-}
+    .fa-instagram {
+        background: none;
+        display: inline-block;
+        color: white;
+    }
 
-form span {
-    color: red;
-    font-weight: lighter;
-}
+    /* END ICONS */
+    /* HERO IMAGE */
+    .hero {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        height: auto;
+        text-align: center;
+        position: relative;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/besitosSite_HeroIMG.png");
+        /* Position and center the image to scale nicely on all screens */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 3rem;
+        width: 100%;
+    }
 
-/* END CONTACT PAGE */
+    .hero h1 {
+        text-align: center;
+        color: white;
+        font-family: "Questrial", sans-serif;
+        font-weight: bolder;
+        font-size: 4vw;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 
-/* FORM SUBMITTED PAGE */
-.submitted-msg {
-    margin-left: 9rem;
-    margin-right: 9rem;
+    .hero h3 {
+        text-align: center;
+        color: white;
+        font-size: 1.5vw;
+        margin: 0;
+        font-family: Questrial, sans-serif;
+        font-weight: lighter;
+    }
+
+    .hero-button {
+        border: none;
+        font-family: "Questrial", sans-serif;
+        text-decoration: none;
+        font-size: 1vw;
+        border-radius: 6px;
+        margin-top: 20px;
+        padding: 8px 0 8px 0;
+        position: relative;
+        display: inline-block;
+        width: 10%;
+        color: black;
+        background: white;
+        transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    }
+
+    /* END HERO IMAGE */
+    /* HOME PAGE SECTIONS */
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .img-div {
+        display: inline-block;
+        width: 45%;
+        height: auto;
+        margin-right: 9rem;
+    }
+
+    .img-div2 {
+        display: inline-block;
+        width: 35%;
+        height: auto;
+        margin-left: 11rem;
+    }
+
+    .img-div3 {
+        display: inline-block;
+        width: 35%;
+        height: auto;
+        margin-right: 15rem;
+    }
+
+    .home-section {
+        margin-bottom: 6rem;
+        margin-left: 8rem;
+        margin-right: 8rem;
+    }
+
+    .home-section-text {
+        text-align: left;
+        display: inline-block;
+        width: 40%;
+        vertical-align: top;
+    }
+
+    .home-section-text2 {
+        text-align: left;
+        display: inline-block;
+        width: 40%;
+        vertical-align: top;
+        margin-left: 5rem;
+    }
+
+    .home-section-text h1, .home-section-text2 h1 {
+        font-size: 36px;
+        font-weight: bolder;
+        margin-bottom: 0;
+    }
+
+    .home-section-text p, .home-section-text2 p {
+        font-size: 20px;
+    }
+
+    .besitos-promise-section {
+        background: #60555D;
+        color: white;
+        text-align: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        width: 100%;
+        height: auto;
+        margin-bottom: 3rem;
+    }
+
+    .besitos-promise-section h1 {
+        font-size: 36px;
+    }
+
+    .besitos-promise-section p {
+        font-size: 24px;
+        width: 40%;
+        margin: 0 auto;
+
+    }
+
+    .call-to-action {
+        border: none;
+        text-align: center;
+        font-family: "Questrial", sans-serif;
+        text-decoration: none;
+        font-size: 1vw;
+        font-weight: normal;
+        border-radius: 6px;
+        margin-top: 20px;
+        margin-left: 30%;
+        padding: 8px 0 8px 0;
+        position: relative;
+        display: inline-block;
+        width: 30%;
+        color: white;
+        background: #D39AA9FF;
+        transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    }
+
+    .how-it-works {
+        text-align: center;
+    }
+
+    .how-it-works h1 {
+        font-size: 2vw;
+    }
+
+    .how-it-works-step {
+        background-color: #D39AA9FF;
+        display: inline-block;
+        width: 5vw;
+        height: 5vw;
+        border-radius: 100px;
+        text-align: center;
+        margin-right: 12rem;
+        margin-left: 12rem;
+    }
+
+    .how-it-works-step-container {
+        width: auto;
+        display: inline-block;
+    }
+
+    .how-it-works-step h1 {
+        margin-top: 33%;
+        color: white;
+        font-size: 2vw;
+    }
+
+    /* END HOME PAGE SECTIONS */
+    /* ABOUT PAGE */
+    .about-section {
+        margin: 2rem 12vw;
+        text-align: center;
+        padding-top: 3rem;
+        color: #363536;
+        overflow: hidden;
+    }
+
+    .statement {
+        font-size: 24px;
+        text-align: left;
+        position: relative;
+        padding: 1rem;
+        margin-left: 12vw;
+        margin-right: 12vw;
+        font-weight: lighter;
+    }
+
+    .about-section h1 {
+        font-size: 48px;
+        display: inline-block;
+        text-align: left;
+        position: relative;
+        animation: slideIn 1s ease;
+    }
+
+    .about-section h1 span {
+        color: #999DFF;
+    }
+
+    .about-image {
+        background-image: url('../images/monicaBesitosOwner.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 300px;
+        height: 300px;
+        margin: 2rem auto;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px rgba(246, 154, 188, 0.5); /* dropshadow with a pinkish hue */
+        animation: fadeIn 1s ease;
+    }
+
+    @keyframes slideIn {
+        from {
+            left: -150px;
+            top: -150px;
+        }
+        to {
+            left: 0;
+            top: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* END ABOUT PAGE */
+    /* CONTACT PAGE */
+    form {
+        display: inline-block;
+        width: 25vw;
+        margin-left: 3rem; /* T, L, R, B */
+        padding: 0 50px 50px;
+        transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    }
+
+    .contact-section {
+        padding-right: 9rem;
+        padding-top: 9rem;
+        padding-left: 25%;
+        overflow: hidden;
+    }
+
+    .contact-text-container {
+        float: left;
+    }
+
+    .contact-text-container h1 {
+        font-size: 4rem;
+        margin-bottom: 0;
+    }
+
+    .contact-text-container h3 {
+        display: block;
+        margin-top: 3rem;
+    }
+
+    .contact-line {
+        border-width: 3px; /* Customize line thickness */
+        border-style: solid;
+        float: left;
+        width: 50%;
+        border-color: #D39AA9FF;
+        display: block;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 16px;
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        border: none;
+        border-bottom: 2px solid #ddd;
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+        background-color: transparent;
+        transition: all 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+        outline: none;
+        border-bottom-color: #fd9eb2;
+    }
+
+    textarea#message {
+        font-family: Questrial, serif;
+        resize: none;
+        width: 100%;
+        height: 10vh;
+    }
+
+    small.form-text {
+        color: #999;
+        font-size: 12px;
+        font-family: Questrial;
+    }
+
+    button[type="submit"] {
+        background: #D39AA9FF;
+        color: #fff;
+        border: none;
+        font-size: 16px;
+        font-weight: lighter;
+        font-family: Questrial;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        position: relative;
+        margin: 10px auto 0;
+        padding: .5em;
+    }
+
+    #submit {
+        color: #fff;
+        border: none;
+        background: none;
+        font-family: Questrial;
+        font-weight: normal;
+        font-size: 18px;
+        padding: 4px;
+    }
+
+    form h4 {
+        margin-bottom: 40px;
+        font-weight: bold;
+    }
+
+    form h1 {
+        margin-bottom: 0;
+        font-size: 48px;
+    }
+
+    form span {
+        color: red;
+        font-weight: lighter;
+    }
+
+    /* END CONTACT PAGE */
+    /* FORM SUBMITTED PAGE */
+    .submitted-msg {
+        margin-left: 9rem;
+        margin-right: 9rem;
+    }
 }
