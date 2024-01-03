@@ -31,16 +31,14 @@
 <body>
 <!-- NAVBAR -->
 <ul id="navbar">
-    <li class="navbar_item"><a class="navbar_link" href="/contact">Contact</a></li>
-    <li class="navbar_item"><a class="navbar_link" href="/about">About</a></li>
-    <li class="navbar_item"><a class="navbar_link" href="/">Home</a></li>
     <li class="logo"><a id="logo_link" href="/">Besitos Gift Shop</a></li>
-    <li id="navbar_item" class="navbar_item"><a href="/"><img alt="kiss_icon" src="../static/icons/kiss.svg"
-                                                              class="besitos_icon"></a></li>
+    <li class="navbar_item"><a class="navbar_link" href="/">HOME</a></li>
+    <li class="navbar_item"><a class="navbar_link" href="/about">ABOUT</a></li>
+    <li class="navbar_item"><a class="navbar_link" href="/contact">CONTACT</a></li>
 </ul>
 
 <!-- site content -->
-<section> {% block content %} {% endblock %} </section>
+<section class="main"> {% block content %} {% endblock %} </section>
 
 <ul id="footer">
     <li class="logo"><a class="logo_link_footer" href="/">Besitos Gift Shop</a></li>

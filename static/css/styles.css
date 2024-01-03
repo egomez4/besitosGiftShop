@@ -8,89 +8,294 @@ body {
     margin: 0;
     background: white;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CONTACT PAGE */
+form {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+.contact-section {
+    overflow: hidden;
+    width: auto;
+}
+
+.contact-text-container {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.contact-text-container h1 {
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+.contact-text-container h3 {
+    display: block;
+    margin-top: 2rem;
+    margin-left: 5%;
+}
+
+.contact-line {
+    border-width: 3px; /* Customize line thickness */
+    border-style: solid;
+    float: left;
+    width: 50%;
+    border-color: #D39AA9FF;
+    display: block;
+    margin-left: 5%;
+}
+
+.form-group {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 1rem;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 16px;
+    width: 100%;
+    background-color: transparent;
+    transition: all 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-bottom-color: #fd9eb2;
+}
+
+textarea#message {
+    font-family: Questrial, serif;
+    resize: none;
+    width: 100%;
+    height: 10vh;
+}
+
+small.form-text {
+    color: #999;
+    font-size: 12px;
+    font-family: Questrial;
+}
+
+button[type="submit"] {
+    background: #D39AA9FF;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: Questrial;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    position: relative;
+    margin: 0 auto;
+    padding: 8px;
+    display: block;
+}
+
+#submit {
+    color: #fff;
+    border: none;
+    background: none;
+    font-family: Questrial;
+    font-weight: normal;
+    font-size: 18px;
 }
 
 
-/* Mobile devices in portrait and landscape mode */
-@media screen and (max-width: 1279px) {
+form h4 {
+    margin-bottom: 40px;
+    font-weight: bold;
+}
 
-    /* Hide hero image and buttons (only for large displays) */
+form h1 {
+    margin-bottom: 0;
+    font-size: 48px;
+}
+
+form span {
+    color: red;
+    font-weight: lighter;
+}
+
+/* END CONTACT PAGE */
+
+
+/* Mobile devices in portrait and landscape mode */
+@media screen and (max-width: 768px) {
+
+    .main {
+        flex: 1;
+        padding: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    /* HERO IMAGE */
     .hero {
         display: none;
     }
 
-    #navbar {
+    img {
         width: 100%;
+        height: auto;
+    }
+
+    #navbar {
         list-style-type: none;
-        font-size: 12px;
+        overflow: hidden;
+        margin: auto;
+        height: auto;
+        display: block;
+        text-align: center;
         padding: 0;
-        top: 0;
-        left: 0;
-        margin: 0;
-        height: 46px;
-        background-color: white;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    .navbar_item {
+        width: auto;
+        margin: auto;
+        display: inline-block;
+        text-align: center;
+        margin-left: 2rem;
+        margin-right: 2rem;
+
     }
 
     .navbar_item .navbar_link {
-        float: right;
-        display: inline-block;
-        background:#D39AA9FF;
-        text-decoration: none;
-        border-radius: 4px;
-        width: auto;
-        height: 15px;
-        margin-right: 20px;
-        margin-bottom: 10px;
-        text-align: center;
-        padding-left: 8px;
-        padding-right: 8px;
-        padding-top: 8px;
-        padding-bottom: 4px;
-        margin-top: 10px;
-        color: white;
-        font-size: 10px;
-    }
-
-    #footer {
+        margin: auto;
         list-style-type: none;
-        /* top, right, bottom, left */
-        margin: auto 0 0;
-        padding: 3px;
-        height: auto;
-        width: calc(100% - 6px);
-        left: 0;
-        bottom: 0;
-        position: absolute;
-        text-align: center;
-        background: #D39AA9FF;
-    }
-
-    #footer .logo_link_footer {
-        display: inline-block;
-        font-family: "Style Script";
         text-decoration: none;
-        color: white;
-        font-size: 36px;
+        color: black;
+        font-family: "Questrial", sans-serif;
+        font-size: 14px;
     }
 
-    .besitos_icon {
-        float: left;
-        margin-left: 20px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: 8%;
+    .logo {
+        width: auto;
+        display: block;
+        margin: auto;
+        margin-bottom: 1rem;
+
     }
 
     #logo_link {
-        display: none;
+        font-family: "Style Script";
+        text-decoration: none;
+        font-size: 24px;
+        color: black;
+        display: block;
+    }
+
+    /* FOOTER */
+    #footer {
+        list-style-type: none;
+        /* top, right, bottom, left */
+        margin-bottom: 0;
+        height: auto;
+        width: auto;
+        text-align: center;
+        background: #D39AA9FF;
+        padding: 0;
+
+    }
+
+    .logo_link_footer {
+        display: inline-block;
+        font-family: "Style Script";
+        text-decoration: none;
+        font-size: 24px;
+        color: white;
+        width: auto;
+        margin-top: 1rem;
+    }
+
+    .footer_item {
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 24px;
+    }
+
+    /* END FOOTER */
+    /* ICONS */
+    .fa {
+        padding: 8px;
+        width: auto;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 100%;
+
     }
 
     .fa-instagram {
         background: none;
         display: inline-block;
         color: white;
-        text-decoration: none;
-        margin-top: 1rem;
+    }
+
+    /* END ICONS */
+    /* CONTACT SECTION */
+    .contact-text-container h1 {
+        font-size: 36px;
+        width: auto;
+    }
+
+    .contact-section h3 {
+        display: block;
+        width: 100%;
+        margin: 0;
+        text-align: left;
+        float: left;
+        margin-bottom: 2rem;
+        font-size: 16px;
+    }
+
+    .contact-line {
+        border-width: 2px; /* Customize line thickness */
+        border-style: solid;
+        width: 33%;
+        margin: 0;
+        margin-bottom: 1rem;
+        border-color: #D39AA9FF;
+        display: block;
+    }
+
+    /* END CONTACT SECTION */
+    /* HOME SECTIONS */
+    .home-section {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .home-section-text, .home-section-text2 {
+        margin-bottom: 1rem;
     }
 
     .call-to-action {
@@ -98,241 +303,366 @@ body {
         text-align: center;
         font-family: "Questrial", sans-serif;
         text-decoration: none;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: normal;
         border-radius: 6px;
-        margin-bottom: 25px;
-        padding: 8px 6px 8px 6px;
-        width: 20%;
-        margin-left: 38%;
+        padding: 8px 0 8px 0;
+        position: relative;
+        display: inline-block;
+        width: 30%;
         color: white;
-        display: block;
         background: #D39AA9FF;
         transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
     }
 
-    h1, p {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-
-    img {
-        width: 100%
-    }
-
     .besitos-promise-section {
+        text-align: center;
         background: #60555D;
         color: white;
-        text-align: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        width: 100%;
-        height: auto;
-        margin-bottom: 3rem;
-    }
-
-    .about-section h1 {
-        display: none;
-    }
-
-    .statement {
-        margin-left: 40px;
-        margin-right: 40px;
-        display: block;
-    }
-
-    .about-image {
-        background-image: url('../images/monicaBesitosOwner.jpg');
-        background-size: cover;
-        background-position: center;
-        width: 130px;
-        height: 130px;
-        margin: 2rem auto;
-        border-radius: 50%;
-        box-shadow: 0px 0px 10px rgba(246, 154, 188, 0.5); /* dropshadow with a pinkish hue */
-        animation: fadeIn 1s ease;
-    }
-
-    .how-it-works {
-        text-align: center;
-    }
-
-    .how-it-works h1 {
-        font-size: 36px;
+        padding: 1rem;
     }
 
     .how-it-works-step {
         background-color: #D39AA9FF;
-        display: block;
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
         border-radius: 100px;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin: 0 auto;
-    }
-
-    .how-it-works-step-container {
-        width: auto;
-        display: block;
-        margin: 0 auto;
+        color: white;
     }
 
     .how-it-works-step h1 {
-        color: white;
-        font-size: 75px;
-        display: block;
-        padding-top: 10px;
-        max-height: 100px;
+        font-size: 32px;
     }
+
+    .how-it-works h1 {
+        font-size: 32px;
+    }
+
+    .how-it-works-step-container {
+        margin-bottom: 2rem;
+    }
+
+    /* END HOME SECTIONS */
 
 }
 
-/* CONTACT PAGE */
-    form {
+@media screen and (min-width: 769px) and (max-width: 1919px) {
+    .main {
+        flex: 1;
+        padding: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    /* HERO IMAGE */
+    .hero {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        height: 250px;
+        text-align: center;
+        position: relative;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/besitosSite_HeroIMG.jpg");
+        /* Position and center the image to scale nicely on all screens */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 3rem;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero h1 {
+        text-align: center;
+        color: white;
+        font-family: "Questrial", sans-serif;
+        font-weight: bolder;
+        font-size: 48px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .hero h3 {
+        text-align: center;
+        color: white;
+        font-size: 24px;
+        margin: 0;
+        font-family: Questrial, sans-serif;
+        font-weight: lighter;
+    }
+
+    .hero-button {
+        border: none;
+        font-family: "Questrial", sans-serif;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 6px;
+        margin-top: 20px;
+        padding: 8px 0 8px 0;
+        position: relative;
         display: inline-block;
-        margin: 0 auto;
-        width: 100%;
-        overflow: hidden;
-        padding-left: 25px;
-        padding-right: 25px;
+        width: 10%;
+        color: black;
+        background: white;
         transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
     }
 
-    .contact-section {
+    /* END HERO IMAGE */
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .img-div, .img-div2, .img-div3 {
+        width: 45%;
+        display: inline-block;
+    }
+
+    #navbar {
+        list-style-type: none;
         overflow: hidden;
-        width: 100%;
-    }
-
-    .contact-text-container {
+        margin: auto;
+        height: auto;
         display: block;
-        margin-bottom: 50px;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
     }
 
-    .contact-text-container h1 {
-        font-size: 60px;
-        margin-bottom: 0;
-    }
-
-    .contact-text-container h3 {
-        display: block;
-        margin-top: 2rem;
-        margin-left: 5%;
-    }
-
-    .contact-line {
-        border-width: 3px; /* Customize line thickness */
-        border-style: solid;
-        float: left;
-        width: 50%;
-        border-color: #D39AA9FF;
-        display: block;
-        margin-left: 5%;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-        width: 80%;
-    }
-
-    label {
-        font-size: 16px;
-        font-weight: bold;
-        color: #555;
-        margin-bottom: 5px;
-        display: block;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea {
-        border: none;
-        border-bottom: 2px solid #ddd;
-        padding: 10px;
-        margin: 0 auto;
-        font-size: 16px;
-        width: 100%;
-        background-color: transparent;
-        transition: all 0.3s;
-    }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    textarea:focus {
-        outline: none;
-        border-bottom-color: #fd9eb2;
-    }
-
-    textarea#message {
-        font-family: Questrial, serif;
-        resize: none;
-        width: 100%;
-        height: 10vh;
-    }
-
-    small.form-text {
-        color: #999;
-        font-size: 12px;
-        font-family: Questrial;
-    }
-
-    button[type="submit"] {
-        background: #D39AA9FF;
-        color: #fff;
-        border: none;
-        font-size: 16px;
-        font-weight: lighter;
-        font-family: Questrial;
-        border-radius: 5px;
-        cursor: pointer;
+    .navbar_item {
         width: auto;
-        position: relative;
-        margin: 0 auto;
-        padding: 8px;
-        display: block;
-        left: -15px;
+        margin: auto;
+        display: inline-block;
+        text-align: center;
+        margin-left: 2rem;
+        margin-right: 2rem;
+
     }
 
-    #submit {
-        color: #fff;
-        border: none;
-        background: none;
-        font-family: Questrial;
-        font-weight: normal;
+    .navbar_item .navbar_link {
+        margin: auto;
+        list-style-type: none;
+        text-decoration: none;
+        color: black;
+        font-family: "Questrial", sans-serif;
         font-size: 18px;
     }
 
+    .logo {
+        width: auto;
+        display: block;
+        margin: auto;
+        margin-bottom: 1rem;
 
-    form h4 {
-        margin-bottom: 40px;
-        font-weight: bold;
     }
 
-    form h1 {
+    #logo_link {
+        font-family: "Style Script";
+        text-decoration: none;
+        font-size: 32px;
+        color: black;
+        display: block;
+    }
+
+    /* FOOTER */
+    #footer {
+        list-style-type: none;
+        /* top, right, bottom, left */
         margin-bottom: 0;
+        height: auto;
+        width: auto;
+        text-align: center;
+        background: #D39AA9FF;
+        padding: 0;
+
+    }
+
+    .logo_link_footer {
+        display: inline-block;
+        font-family: "Style Script";
+        text-decoration: none;
+        font-size: 24px;
+        color: white;
+        width: auto;
+        margin-top: 1rem;
+    }
+
+    .footer_item {
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 24px;
+    }
+
+    /* END FOOTER */
+    /* ICONS */
+    .fa {
+        padding: 8px;
+        width: auto;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 100%;
+
+    }
+
+    .fa-instagram {
+        background: none;
+        display: inline-block;
+        color: white;
+    }
+
+    /* END ICONS */
+
+    /* HOME SECTIONS */
+    .home-section-text {
+        display: inline-block;
+        width: 45%;
+        height: 100%;
+        text-align: center;
+        margin-left: 2rem;
+    }
+
+    .home-section-text h1, .home-section-text2 h1 {
+        font-size: 24px;
+    }
+
+    .home-section-text p, .home-section-text2 p {
+        font-size: 18px;
+    }
+
+    .home-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .home-section-text2 {
+        display: inline-block;
+        width: 50%;
+        height: 100%;
+        text-align: center;
+        margin-right: 2rem;
+    }
+
+    .call-to-action {
+        border: none;
+        text-align: center;
+        font-family: "Questrial", sans-serif;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: normal;
+        border-radius: 6px;
+        margin-top: 20px;
+        padding: 8px 0 8px 0;
+        position: relative;
+        display: inline-block;
+        width: 30%;
+        color: white;
+        background: #D39AA9FF;
+        transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    }
+
+    .besitos-promise-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #60555D;
+        color: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .besitos-promise-section h1 {
+        margin: 0 auto;
+        font-size: 24px;
+    }
+
+    .besitos-promise-section p {
+        font-size: 18px;
+    }
+
+    .how-it-works {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .how-it-works h1 {
+        font-size: 24px;
+    }
+
+    .how-it-works-step-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .how-it-works-step {
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        background: #fd9eb2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .how-it-works-step h1 {
         font-size: 48px;
+        color: white;
+    }
+    /* END HOME SECTIONS */
+
+    /* CONTACT SECTION */
+    .contact-text-container h1 {
+        font-size: 36px;
+        width: auto;
     }
 
-    form span {
-        color: red;
-        font-weight: lighter;
+    .contact-section h3 {
+        display: block;
+        width: 100%;
+        margin: 0;
+        text-align: left;
+        float: left;
+        margin-bottom: 2rem;
+        font-size: 16px;
     }
 
-    /* END CONTACT PAGE */
+    .contact-line {
+        border-width: 2px; /* Customize line thickness */
+        border-style: solid;
+        width: 33%;
+        margin: 0;
+        margin-bottom: 1rem;
+        border-color: #D39AA9FF;
+        display: block;
+    }
 
-/* Small desktops and laptops */
-@media screen and (min-width: 1280px) and (max-width: 1439px) {
-    /* Your styles here */
-}
-
-/* Medium desktops */
-@media screen and (min-width: 1440px) and (max-width: 1919px) {
-    /* Your styles here */
+    /* END CONTACT SECTION */
 }
 
 /* Large desktops and high-resolution displays */
 @media screen and (min-width: 1920px) {
-    /* NAVBAR STUFF*/
 
+    .main {
+        flex: 1;
+    }
+
+    /* NAVBAR STUFF*/
     #navbar_item, .besitos_icon {
         display: none;
     }
@@ -340,54 +670,47 @@ body {
     #navbar {
         list-style-type: none;
         overflow: hidden;
-        margin-left: 16rem;
-        margin-right: 16rem;
-        padding: 0;
-        left: 0;
-        top: 0;
+        margin: auto;
+        padding-top: 1rem;
         height: auto;
-        width: auto;
+        display: block;
+        text-align: center;
+        padding-bottom: 2rem;
+        top: 0;
     }
 
     .navbar_item {
-        list-style-type: none;
-        float: right;
-        background-color: #d39aa9;
-        margin-right: 1rem;
-        margin-top: 1.5rem;
-        padding: 8px 0 8px 0;
-        border-radius: 6px;
+        width: auto;
+        margin: auto;
+        display: inline-block;
         text-align: center;
-        width: 6%;
+        margin-left: 2rem;
+        margin-right: 2rem;
+
     }
 
     .navbar_item .navbar_link {
-        display: block;
         list-style-type: none;
         text-decoration: none;
-        color: white;
+        color: black;
         font-family: "Questrial", sans-serif;
-        font-size: .85vw;
+        font-size: 18px;
     }
 
-    #logo {
-        list-style-type: none;
-        float: left;
-    }
+    .logo {
+        width: auto;
+        display: block;
+        margin: auto;
+        margin-bottom: 1rem;
 
-    #logo::marker {
-        list-style-type: none;
     }
 
     #logo_link {
-        list-style-type: none;
-        display: inline-block;
-        margin: 1rem 1rem 1rem 3rem;
         font-family: "Style Script";
         text-decoration: none;
-        font-size: 2vw;
+        font-size: 48px;
         color: black;
-        width: auto;
+        display: block;
     }
 
     /* END NAVBAR STUFF */
@@ -397,6 +720,7 @@ body {
         /* top, right, bottom, left */
         margin-left: 16rem;
         margin-right: 16rem;
+        margin-bottom: 0;
         height: auto;
         width: auto;
         text-align: center;
@@ -444,15 +768,15 @@ body {
     .hero {
         padding-top: 5%;
         padding-bottom: 5%;
-        height: 200px;
+        height: 250px;
         text-align: center;
         position: relative;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/besitosSite_HeroIMG.png");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/besitosSite_HeroIMG.jpg");
         /* Position and center the image to scale nicely on all screens */
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        margin-bottom: 12rem;
+        margin-bottom: 6rem;
         width: auto;
         margin-left: 16rem;
         margin-right: 16rem;
@@ -463,7 +787,7 @@ body {
         color: white;
         font-family: "Questrial", sans-serif;
         font-weight: bolder;
-        font-size: 4vw;
+        font-size: 64px;
         margin-top: 0;
         margin-bottom: 0;
     }
@@ -471,7 +795,7 @@ body {
     .hero h3 {
         text-align: center;
         color: white;
-        font-size: 1.5vw;
+        font-size: 36px;
         margin: 0;
         font-family: Questrial, sans-serif;
         font-weight: lighter;
@@ -498,14 +822,13 @@ body {
     img {
         width: 100%;
         height: auto;
-        border-radius: 10px;
+        border-radius: 8px;
     }
 
     .img-div {
         display: inline-block;
         width: 45%;
         height: auto;
-        margin-right: 9rem;
         border-radius: 10px;
     }
 
@@ -513,7 +836,6 @@ body {
         display: inline-block;
         width: 35%;
         height: auto;
-        margin-left: 11rem;
         border-radius: 10px;
     }
 
@@ -521,12 +843,14 @@ body {
         display: inline-block;
         width: 35%;
         height: auto;
-        margin-right: 15rem;
         border-radius: 10px;
     }
 
     .home-section {
-        margin-bottom: 16rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 6rem;
         margin-left: 16rem;
         margin-right: 16rem;
     }
@@ -536,6 +860,7 @@ body {
         display: inline-block;
         width: 40%;
         vertical-align: top;
+        margin-left: 6rem;
     }
 
     .home-section-text2 {
@@ -543,7 +868,7 @@ body {
         display: inline-block;
         width: 40%;
         vertical-align: top;
-        margin-left: 5rem;
+        margin-right: 6rem;
     }
 
     .home-section-text h1, .home-section-text2 h1 {
@@ -560,13 +885,16 @@ body {
         background: #60555D;
         color: white;
         text-align: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding: 2rem;
         width: auto;
         height: auto;
-        margin-bottom: 12rem;
+        margin-bottom: 6rem;
         margin-left: 16rem;
         margin-right: 16rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .besitos-promise-section h1 {
@@ -575,8 +903,7 @@ body {
 
     .besitos-promise-section p {
         font-size: 24px;
-        width: 40%;
-        margin: 0 auto;
+        width: 60%
 
     }
 
@@ -642,11 +969,8 @@ body {
 
     .statement {
         font-size: 24px;
-        text-align: left;
-        position: relative;
-        padding: 1rem;
-        margin-left: 12vw;
-        margin-right: 12vw;
+        margin-left: 16rem;
+        margin-right: 16rem;
         font-weight: lighter;
     }
 
@@ -698,46 +1022,39 @@ body {
 
     /* END ABOUT PAGE */
     /* CONTACT PAGE */
-    form {
-        display: inline-block;
-        width: 25vw;
-        margin-left: 3rem; /* T, L, R, B */
-        padding: 0 50px 50px;
-        transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    .form-group {
+        width: 50%;
     }
 
     .contact-section {
-        padding-right: 9rem;
-        padding-top: 9rem;
-        padding-left: 25%;
-        overflow: hidden;
+        margin-left: 16rem;
+        margin-right: 16rem;
+    }
+
+    .contact-section h3 {
+        margin-bottom: 2rem;
     }
 
     .contact-text-container {
-        float: left;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        justify-content: center;
     }
 
     .contact-text-container h1 {
-        font-size: 4rem;
-        margin-bottom: 0;
     }
 
     .contact-text-container h3 {
-        display: block;
-        margin-top: 3rem;
     }
 
     .contact-line {
-        border-width: 3px; /* Customize line thickness */
+        border-width: 2px; /* Customize line thickness */
         border-style: solid;
-        float: left;
-        width: 50%;
+        width: 15%;
         border-color: #D39AA9FF;
         display: block;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
+        margin: 0;
     }
 
     label {
@@ -789,10 +1106,10 @@ body {
         font-family: Questrial;
         border-radius: 5px;
         cursor: pointer;
-        width: 100%;
         position: relative;
         margin: 10px auto 0;
         padding: .5em;
+        width: 120px;
     }
 
     #submit {

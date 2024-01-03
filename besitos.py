@@ -36,7 +36,7 @@ class ContactForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     subject = StringField('Subject', validators=[DataRequired()])
     message = TextAreaField('Message', validators=[DataRequired()])
-    submit = SubmitField('Send Email')
+    submit = SubmitField('Send')
 
 
 @app.route('/')
